@@ -9,8 +9,8 @@ def gen_binary(count, n_one, n_two, prefix):
 
 
 if __name__ == '__main__':
-    n = int(input())
+    #n = int(input())
     count = 0
-    n_one = n
-    n_two = n
-    gen_binary(count, n_one, n_two, '')
+    n_one = 2
+    n_two = 2
+    gen_binary(count, n_one, n_two, prefix='')
