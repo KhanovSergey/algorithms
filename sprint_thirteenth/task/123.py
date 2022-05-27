@@ -1,36 +1,19 @@
-def combinations(n):
-    symbolls = {'2': 'abc',
-                '3': 'def',
-                '4': 'ghi',
-                '5': 'jkl',
-                '6': 'mno',
-                '7': 'pqrs',
-                '8': 'tuv',
-                '9': 'wxyz'
-                }
+def is_comparison(sequen, j):
+    tmp1 = sequen[j + 1] + sequen[j]
+    tmp2 = sequen[j] + sequen[j + 1]
+    if tmp1 > tmp2:
+        return True
 
-    def req_comb(digits, path, result):
-        if digits == '':
-            result.append(path)
-            return
-        for i in symbolls[digits[0]]:
-            print(f'symbolls[digits[0]]      {symbolls[digits[0]]}')
-            path += i
-            #print(f'path one       {path}')
-            print(f'digits[1:]  {digits[1:]}')
-            req_comb(digits[1:], path, result)
-            #print(f'path two       {path}')
-            path = path[:-1]
 
-            #print(f'path two       {path}')
-
-    result = []
-    req_comb(n, '', result)
-    print(result)
-    return result
+def num_strength(sequen, n):
+    for i in range(n - 1):
+        for j in range(n - 1 - i):
+            if is_comparison(sequen, j):
+                sequen[j + 1], sequen[j] = sequen[j], sequen[j + 1]
+    return ''.join(sequen)
 
 
 if __name__ == '__main__':
-    n = input()
-    for x in combinations(n):
-        print(x, end=' ')
+    n = int(input())
+    sequen = input().split(' ')
+    print(num_strength(sequen, n))
