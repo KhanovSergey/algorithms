@@ -1,10 +1,10 @@
 def main():
-    idx = 0
+    index = 0
     res = False
     for i in s:
         try:
-            new_idx = t.index(i, idx)
-            idx = new_idx + 1
+            new_index = t.index(i, index)
+            index = new_index + 1
             res = True
         except ValueError:
             res = False
