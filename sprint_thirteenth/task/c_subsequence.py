@@ -1,4 +1,4 @@
-def main():
+def main(s, t):
     index = 0
     res = False
     for i in s:
@@ -17,4 +17,4 @@ def main():
 if __name__ == '__main__':
     s = input()
     t = input()
-    print(main())
+    print(main(s, t))
