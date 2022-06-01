@@ -1,3 +1,8 @@
+"""
+ID 68723065
+"""
+
+
 def broken_search(nums, target) -> int:
     left_border = 0
     right_border = len(nums) - 1
@@ -16,4 +21,3 @@ def broken_search(nums, target) -> int:
             else:
                 left_border = middle + 1
     return -1
-
