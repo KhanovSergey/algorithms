@@ -1,5 +1,5 @@
 """
-ID 68738687
+ID 68738967
 Code edits after the first review.
 """
 import sys
@@ -26,7 +26,7 @@ def broken_search(nums, target) -> int:
 
 
 def valid_len_array(keys):
-    l_arrey = len(array)
+    l_array = len(array)
     if not keys.isnumeric():
         print(f'Вы ввели {keys[0]}, требуется ввести число'
               f' от 0 до 10000 включительно.')
@@ -35,9 +35,9 @@ def valid_len_array(keys):
         print(f'Вы ввели {keys[0]}, требуется ввести число'
               f' от 0 до 10 000 включительно.')
         sys.exit(1)
-    elif int(keys) != l_arrey:
+    elif int(keys) != l_array:
         print(f'Вы ввели {keys[0]}, не соответствующий'
-              f' длине массива {l_arrey}')
+              f' длине массива {l_array}')
         sys.exit(1)
 
 
