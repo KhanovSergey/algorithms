@@ -1,5 +1,5 @@
 """
-ID 68741067
+ID 68742210
 Code edits after the first review.
 """
 import sys
@@ -26,7 +26,6 @@ def broken_search(nums, target) -> int:
 
 
 def valid_len_array(keys):
-    l_array = len(array)
     if not keys.isnumeric():
         print(f'Вы ввели {keys[0]}, требуется ввести число'
               f' от 0 до 10000 включительно.')
@@ -34,10 +33,6 @@ def valid_len_array(keys):
     elif 0 > int(keys) or int(keys) > 10000:
         print(f'Вы ввели {keys[0]}, требуется ввести число'
               f' от 0 до 10 000 включительно.')
-        sys.exit(1)
-    elif int(keys) != l_array:
-        print(f'Вы ввели {keys[0]}, не соответствующий'
-              f' длине массива {l_array}')
         sys.exit(1)
 
 
@@ -52,6 +47,19 @@ def valid_elem_find(elem_find):
         sys.exit(1)
 
 
+def valid_array(array, len_array):
+    join_array = str("".join(array))
+    l_array = len(array)
+    if not join_array.isnumeric():
+        print("В строке ввели одно или более значений не int!")
+        sys.exit(1)
+
+    elif int(len_array) != l_array:
+        print(f'Вы ввели {len_array[0]}, не соответствующий'
+              f' длине массива {l_array}')
+        sys.exit(1)
+
+
 if __name__ == '__main__':
     len_array = input()
     valid_len_array(len_array)
@@ -59,5 +67,8 @@ if __name__ == '__main__':
     elem_find = input()
     valid_elem_find(elem_find)
 
-    array = list(map(int, input().split()))
+    array = input().strip().split()
+    valid_array(array, len_array)
+
+    array = list(map(int, array))
     print(broken_search(array, int(elem_find)))
