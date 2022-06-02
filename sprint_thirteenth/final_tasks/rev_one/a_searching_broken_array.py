@@ -1,5 +1,5 @@
 """
-ID 68738967
+ID 68741067
 Code edits after the first review.
 """
 import sys
@@ -52,15 +52,12 @@ def valid_elem_find(elem_find):
         sys.exit(1)
 
 
-def main():
-    valid_len_array(len_array)
-    valid_elem_find(elem_find)
-
-    return broken_search(array, int(elem_find))
-
-
 if __name__ == '__main__':
     len_array = input()
+    valid_len_array(len_array)
+
     elem_find = input()
+    valid_elem_find(elem_find)
+
     array = list(map(int, input().split()))
-    print(main())
+    print(broken_search(array, int(elem_find)))
