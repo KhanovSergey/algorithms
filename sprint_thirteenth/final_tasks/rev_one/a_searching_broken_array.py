@@ -1,3 +1,7 @@
+"""
+ID 68738642
+Code edits after the first review.
+"""
 import sys
 
 
@@ -8,16 +12,16 @@ def broken_search(nums, target) -> int:
         middle = (left_border + right_border) // 2
         if nums[middle] == target:
             return middle
-        if nums[left_border] <= nums[middle]:
-            if nums[left_border] <= target < nums[middle]:
-                right_border = middle - 1
-            else:
-                left_border = middle + 1
-        else:
+        if nums[left_border] > nums[middle]:
             if nums[middle] < target <= nums[right_border]:
                 left_border = middle + 1
             else:
                 right_border = middle - 1
+        else:
+            if nums[left_border] <= target < nums[middle]:
+                right_border = middle - 1
+            else:
+                left_border = middle + 1
     return -1
 
 
