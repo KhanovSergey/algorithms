@@ -1,6 +1,6 @@
 import unittest
 
-from a_dec import Queue
+from task.a_dec import Queue
 
 
 class StackTester(unittest.TestCase):

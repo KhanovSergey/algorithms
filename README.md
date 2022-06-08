@@ -1,4 +1,5 @@
 
+
 В Windows:
 ```
 ...Dev/api_yamdb$ source venv/Scripts/activate 
